@@ -15,6 +15,7 @@
         <style>
             @yield('style')
         </style>
+        
         @include('partials.header')
     </head>
     <body>

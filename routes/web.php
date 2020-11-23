@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.greetings');
 });
-Route::get('/form-register', function() {
+Route::get('/registration', function() {
     return view('pages.form-user');
 });
 Route::get('/form-data', function() {

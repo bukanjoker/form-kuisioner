@@ -30,7 +30,9 @@
           <div class="mb-2">
               <small class="text-danger">* Wajib diisi</small>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="float-right">
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
     </div>
 @endsection
