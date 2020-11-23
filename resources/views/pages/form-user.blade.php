@@ -31,7 +31,7 @@
               <small class="text-danger">* Wajib diisi</small>
           </div>
           <div class="float-right">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Next</button>
           </div>
         </form>
     </div>

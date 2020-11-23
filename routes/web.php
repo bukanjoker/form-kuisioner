@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/registration', function() {
     return view('pages.form-user');
 });
+Route::get('/quisionaire', function() {
+    return view('pages.quisioner');
+});
 Route::get('/form-data', function() {
     return view('pages.form-data');
 });
