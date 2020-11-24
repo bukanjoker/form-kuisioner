@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +27,5 @@ Route::get('/quisionaire', function() {
 Route::get('/form-data', function() {
     return view('pages.form-data');
 });
+
+Route::post('/user-register', [ UsersController::class, 'register' ]);
