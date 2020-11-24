@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\QuestionaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,4 @@ Route::get('/form-data', function() {
 });
 
 Route::post('/user-register', [ UsersController::class, 'register' ]);
+Route::post('/add-word', [ QuestionaireController::class, 'addWords' ]);

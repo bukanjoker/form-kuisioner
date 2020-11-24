@@ -70,15 +70,23 @@ $formTitle = "Data Kata"
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form>
+                <form action="/add-word" method="post">
+                    @csrf
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Kata 1</label>
-                            <input type="text" class="form-control" required>
+                            <input name="word_1" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Kata 2</label>
-                            <input type="text" class="form-control" required>
+                            <input name="word_2" type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Kata</label>
+                            <select name="type" class="custom-select">
+                              <option value="noun">Noun</option>
+                              <option value="verb">Verb</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
