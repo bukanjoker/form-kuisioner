@@ -9,26 +9,26 @@
 @endsection
 
 @section('page-content')
-    <div class="container mt-4">
+    <div class="container mt-4 mb-4">
         @for ($i=0; $i < 10; $i++)
-            <div class="card mb-4">
+            <div class="card mb-2">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-7">
-                            <div class="d-flex justify-content-around">
+                            <div class="d-flex justify-content-between">
                                 <b>
                                     #{{$i+1}}
                                 </b>
                                 <span>
-                                    Kata 1
+                                    Mengemukakan
                                 </span>
                                 <span>
-                                    Kata 2
+                                    Mempertimbangkan
                                 </span>
                             </div>
                         </div>
                         <div class="col-5">
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-around align-items-center">
                                 <div class="">
                                     <small>Nilai Kesamaan</small><br>
                                     <select class="" name="">

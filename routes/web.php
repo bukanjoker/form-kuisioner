@@ -25,9 +25,8 @@ Route::get('/registration', function() {
 Route::get('/quisionaire', function() {
     return view('pages.quisioner');
 });
-Route::get('/form-data', function() {
-    return view('pages.form-data');
-});
+Route::get('/form-data', [ QuestionaireController::class, 'getFormData' ]);
 
 Route::post('/user-register', [ UsersController::class, 'register' ]);
 Route::post('/add-word', [ QuestionaireController::class, 'addWords' ]);
+Route::post('/words/{id}/delete', [ QuestionaireController::class, 'deleteWord' ]);
