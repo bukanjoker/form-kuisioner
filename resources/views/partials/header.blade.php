@@ -24,7 +24,78 @@
                 </button>
             </div>
             <div class="modal-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="mb-4 h6 text-center">
+                    KUISIONER TUGAS AKHIR
+                    <br>
+                    DATASET EVALUASI MODEL SEMANTIK UNTUK BAHASA INDONESIA : KESAMAAN DAN KETERKAITAN ANTAR KATA
+                </div>
+                <div>   
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active h7" id="similar-tab" data-toggle="tab" href="#similar" role="tab" aria-controls="similar" aria-selected="true">SIMILARITY</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <a class="nav-link h7" id="relate-tab" data-toggle="tab" href="#relate" role="tab" aria-controls="relate" aria-selected="false">RELATEDNESS</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <a class="nav-link h7" id="rules-tab" data-toggle="tab" href="#rules" role="tab" aria-controls="rules" aria-selected="false">PETUNJUK</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="myTabContent">
+                        <div class="tab-pane fade show active" id="similar" role="tabpanel" aria-labelledby="similar-tab">
+                            <div class="h6">   
+                                Kesamaan Kata : SIMILARITY
+                            </div>
+                            <div>   
+                                Kata-kata yang serupa jika menunjuk ke hal yang sama, orang, konsep, situasi atau tindakan.
+                                <br><br>
+                                Contoh : SUSU - SIRUP
+                                <br><br>
+                                Kata SUSU dan SIRUP sangat mirip, sama-sama jenis minuman, namun tidak sama.
+                                <br>
+                                SUSU hasil dari memerah sapi, sedangkan SIRUP olahan dari gula, air dan buah. Kedua kata tersebut sama dalam konteks minuman, namun tidak saling terkait. Sedangkan kata NELAYAN dan IKAN saling terkait, namun memiliki makna yang berbeda.
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="relate" role="tabpanel" aria-labelledby="relate-tab">
+                            <div class="h6">   
+                                Keterkaitan Kata : RELATEDNESS
+                            </div>
+                            <div>   
+                                Relasionalitas dapat ditentukan jauh lebih mudah dari pada kesamaan (SIMILARITAS).
+                                <br>
+                                Kata-kata yang saling terkait satu sama lain dan sering digunakan dalam konteks yang sama
+                                <br><br>
+                                Contoh : NELAYAN - IKAN
+                                <br><br>
+                                Kata NELAYAN dan IKAN sangat terkait, karena digunakan dalam konteks yang sama.
+                                <br>
+                                Meskipun NELAYAN adalah profesi/pekerjaan dan IKAN adalah jenis hewan air, kedua kata tersebut saling terkait. Sedangkan kata SUSU dan SIRUP tidak saling terkait, namun sama pada konteks minuman saja.
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+                            <div class="h6">   
+                                Petunjuk Pengisian Kuisioner
+                            </div>
+                            <div>   
+                                Responden hanya perlu mengisi nilai kesamaan dan keterkaitan untuk setiap pasang kata.
+                                <br><br>
+                                Jangkauan Skor =
+                                <br>
+                                > 0  (sangat tidak sama/tidak saling terkait)
+                                <br>
+                                > 10 (sangat sama/terkait)
+                                <br>
+                                Jumlah Kuisioner = 500
+                                <br>
+                                > Nomor 1 - 250 merupakan Noun (Kata Benda)
+                                <br>
+                                > Nomor 251 - 500 merupakan Verb (Kata Kerja)
+                                <br>
+                                Jumlah Responden = 20
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

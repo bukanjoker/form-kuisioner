@@ -32,7 +32,7 @@
                                 <div class="">
                                     <small>Nilai Kesamaan</small><br>
                                     <select class="" name="">
-                                        @for ($j=0; $j < 10; $j++)
+                                        @for ($j=0; $j <= 10; $j++)
                                             <option value={{$j}}>{{$j}}</option>
                                         @endfor
                                     </select>
@@ -40,7 +40,7 @@
                                 <div class="">
                                     <small>Nilai Keterkaitan</small><br>
                                     <select class="" name="">
-                                        @for ($j=0; $j < 10; $j++)
+                                        @for ($j=0; $j <= 10; $j++)
                                             <option value={{$j}}>{{$j}}</option>
                                         @endfor
                                     </select>
