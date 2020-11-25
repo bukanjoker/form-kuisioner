@@ -8,22 +8,28 @@
   Form Kuisioner
 @endsection
 
+@section('user')
+    @if ($request->code && $user)
+        <span class="mr-3">{{$user->name.' ('.$user->code.')'}}</span>
+    @endif
+@endsection
+
 @section('page-content')
     <div class="container mt-4 mb-4">
-        @for ($i=0; $i < 10; $i++)
+        @foreach ($words as $index => $kata)
             <div class="card mb-2">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-7">
                             <div class="d-flex justify-content-between">
                                 <b>
-                                    #{{$i+1}}
+                                    #{{$index + 1}}
                                 </b>
                                 <span>
-                                    Mengemukakan
+                                    {{$kata->word_1}}
                                 </span>
                                 <span>
-                                    Mempertimbangkan
+                                    {{$kata->word_2}}
                                 </span>
                             </div>
                         </div>
@@ -50,7 +56,7 @@
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
         <div class="float-right mb-5">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

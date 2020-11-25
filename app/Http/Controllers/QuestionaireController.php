@@ -67,4 +67,15 @@ class QuestionaireController extends Controller
         
         return redirect('/form-data');
     }
+    
+    public function getQuestionaries(Request $request) {
+        $words = DB::table('words')->get();
+        $user = DB::table('users')->where('code','=',$request->code)->first();
+        
+        if (!$user) {
+            $user = null;
+        }
+        
+        return view('pages.quisioner',compact('words','user','request'));
+    }
 }
