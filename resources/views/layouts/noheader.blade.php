@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>@yield('title')</title>
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <style>
             .app-container {
                 max-width: 600px;
