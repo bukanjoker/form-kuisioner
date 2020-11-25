@@ -11,7 +11,7 @@
 @endsection
 
 @section('page-content')
-    <div class="container">
+    <div class="container mb-5">
         <div class="top-margin mb-4">
             Hallo,
             <br>
