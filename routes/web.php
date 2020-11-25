@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\QuestionaireController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +22,9 @@ Route::get('/', function () {
 Route::get('/registration', function() {
     return view('pages.form-user');
 });
-Route::get('/quisionaire', function() {
-    return view('pages.quisioner');
-});
-Route::get('/form-data', function() {
-    return view('pages.form-data');
-});
+Route::get('/quisionaire', [ QuestionaireController::class, 'getQuestionaries' ]);
+Route::get('/form-data', [ QuestionaireController::class, 'getFormData' ]);
+
+Route::post('/user-register', [ UsersController::class, 'register' ]);
+Route::post('/add-word', [ QuestionaireController::class, 'addWords' ]);
+Route::post('/words/{id}/delete', [ QuestionaireController::class, 'deleteWord' ]);
