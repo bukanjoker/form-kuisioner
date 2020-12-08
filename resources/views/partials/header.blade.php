@@ -84,7 +84,7 @@
                                 <br>
                                 > 0  (sangat tidak sama/tidak saling terkait)
                                 <br>
-                                > 10 (sangat sama/terkait)
+                                > 9 (sangat sama/terkait)
                                 <br>
                                 Jumlah Kuisioner = 500
                                 <br>
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
