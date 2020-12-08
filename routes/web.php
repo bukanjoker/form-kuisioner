@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/registration', function() {
     return view('pages.form-user');
 });
+Route::get('/thanks', function () {
+    return view('pages.thanks');
+});
 Route::get('/quisionaire', [ QuestionaireController::class, 'getQuestionaries' ]);
 Route::get('/form-data', [ QuestionaireController::class, 'getFormData' ]);
 

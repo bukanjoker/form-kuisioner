@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @php
-$formTitle = "Data Kata"
+    $formTitle = "Data Kata"
 @endphp
 
 @section('title')

@@ -1,19 +1,24 @@
 @extends('layouts.noheader')
 
 @section('title')
-  Greetings
+  Thanks
 @endsection
 
 @section('style')
-    .top-margin {
-        margin-top: 120px;
+    .vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
     }
 @endsection
 
 @section('page-content')
-    <div class="container mb-5">
-        <div class="top-margin mb-4">
-            Terimakasih yang sebesar-besarnya atas kesediaan Anda telah meluangkan waktu untuk mengisi semua kuesioner ini.
+<div class="vertical-center">
+    <div class="container">
+        <div class="text-center ">
+            Terimakasih banyak telah bersedia meluangkan waktu untuk mengisi seluruh kuisioner ini
             <br>
             <br>
             Fetra Moira Fiermansyah
@@ -21,8 +26,6 @@
                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
             </svg>
         </div>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-primary" href="/registration" style="padding: 8px 64px;">Mulai</a>
-        </div>
     </div>
+</div>
 @endsection
