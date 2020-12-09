@@ -20,22 +20,25 @@
             <div class="card mb-2">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <div class="col-7">
-                            <div class="d-flex justify-content-between">
-                                <b>
-                                    #{{$index + 1}}
-                                </b>
-                                <span>
-                                    {{$kata->word_1}}
-                                </span>
-                                <span>
-                                    {{$kata->word_2}}
-                                </span>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-3">
+                                    <b>
+                                        {{$index + 1}}
+                                    </b>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                            {{$kata->word_1}}
+                                        <br>
+                                            {{$kata->word_2}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-5">
-                            <div class="d-flex justify-content-around align-items-center">
-                                <div class="">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-lg-6">
                                     <small>Nilai Kesamaan</small><br>
                                     <select class="" name="">
                                         @for ($j=0; $j <= 9; $j++)
@@ -43,7 +46,7 @@
                                         @endfor
                                     </select>
                                 </div>
-                                <div class="">
+                                <div class="col-lg-6">
                                     <small>Nilai Keterkaitan</small><br>
                                     <select class="" name="">
                                         @for ($j=0; $j <= 9; $j++)
