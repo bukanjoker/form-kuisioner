@@ -69,12 +69,13 @@ class QuestionaireController extends Controller
     }
     
     public function getQuestionaries(Request $request) {
-        $words = DB::table('words')->get();
         $user = DB::table('users')->where('code','=',$request->code)->first();
         
         if (!$user) {
-            $user = null;
+            return redirect('/');
         }
+
+        $words = DB::table('words')->paginate(50);
         
         return view('pages.quisioner',compact('words','user','request'));
     }

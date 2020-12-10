@@ -17,13 +17,13 @@
 @section('page-content')
     <div class="container mt-4 mb-4">
         @foreach ($words as $index => $kata)
-            <div class="card mb-2">
+            <div id="{{$kata->id}}" class="card mb-2">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-7">
                             <div class="d-flex justify-content-between">
                                 <b>
-                                    #{{$index + 1}}
+                                    #{{$index + 1 + ($words->currentPage() * $words->count()) - $words->count()}}
                                 </b>
                                 <span>
                                     {{$kata->word_1}}
@@ -60,22 +60,21 @@
         <div class="d-flex justify-content-center">
            <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+                    <a class="page-link" href="{{$words->previousPageUrl().'&code='.$user->code}}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                @for ($i = 1; $i <= $words->total()/$words->count(); $i++)
+                    <li class="page-item"><a class="page-link" href="{{'/quisionaire?page='.$i.'&code='.$user->code}}">{{$i}}</a></li>
+                @endfor
                 <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
+                  <a class="page-link" href="{{$words->nextPageUrl().'&code='.$user->code}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only">Next</span>
                   </a>
                 </li>
             </ul>
         </div>
-
     </div>
 @endsection
