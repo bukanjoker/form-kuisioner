@@ -17,38 +17,39 @@
 @section('page-content')
     <div class="container mt-4 mb-4">
         @foreach ($words as $index => $kata)
-            <div class="card mb-2">
+            <div id="{{$kata->id}}" class="card mb-2">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-6">
                             <div class="row">
-                                <div class="col-3">
+                                <div class="col-sm-4">
                                     <b>
-                                        {{$index + 1}}
+                                        #{{$index + 1 + ($words->currentPage() * $words->count()) - $words->count()}}
                                     </b>
                                 </div>
-                                <div class="col-9">
-                                    <div class="row">
-                                            {{$kata->word_1}}
-                                        <br>
-                                            {{$kata->word_2}}
+                                <div class="col-sm-8">
+                                    <div class="mb-2">
+                                        {{$kata->word_1}}
+                                    </div>
+                                    <div>
+                                        {{$kata->word_2}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
                                     <small>Nilai Kesamaan</small><br>
-                                    <select class="" name="">
+                                    <select class="form-control" name="">
                                         @for ($j=0; $j <= 9; $j++)
                                             <option value={{$j}}>{{$j}}</option>
                                         @endfor
                                     </select>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
                                     <small>Nilai Keterkaitan</small><br>
-                                    <select class="" name="">
+                                    <select class="form-control" name="">
                                         @for ($j=0; $j <= 9; $j++)
                                             <option value={{$j}}>{{$j}}</option>
                                         @endfor
@@ -62,23 +63,20 @@
         @endforeach
         <div class="d-flex justify-content-center">
            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
+                <li class="page-item {{$words->currentPage() == 1 ? 'disabled':''}}">
+                    <a class="page-link" href="{{$words->previousPageUrl().'&code='.$user->code}}" aria-label="Previous">
+                        Prev
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                @for ($i = 1; $i <= $words->lastPage(); $i++)
+                    <li class="page-item {{$words->currentPage() == $i ? 'active':''}}"><a class="page-link" href="{{'/quisionaire?page='.$i.'&code='.$user->code}}">{{$i}}</a></li>
+                @endfor
+                <li class="page-item {{$words->currentPage() == $words->lastPage() ? 'disabled':''}}">
+                    <a class="page-link" href="{{$words->nextPageUrl().'&code='.$user->code}}" aria-label="Next">
+                        Next
+                    </a>
                 </li>
             </ul>
         </div>
-
     </div>
 @endsection
