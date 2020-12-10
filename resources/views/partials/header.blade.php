@@ -48,7 +48,7 @@
                                 Kesamaan Kata : SIMILARITY
                             </div>
                             <div>   
-                                Kata-kata yang serupa jika menunjuk ke hal yang sama, orang, konsep, situasi atau tindakan.
+                                Kata-kata yang serupa jika menunjuk ke hal yang sama, orang, konteks, situasi atau tindakan.
                                 <br><br>
                                 Contoh : SUSU - SIRUP
                                 <br><br>
@@ -80,26 +80,23 @@
                             <div>   
                                 Responden hanya perlu mengisi nilai kesamaan dan keterkaitan untuk setiap pasang kata.
                                 <br><br>
-                                Jangkauan Skor =
+                                Jangkauan Skor = 0 - 9
                                 <br>
                                 > 0  (sangat tidak sama/tidak saling terkait)
                                 <br>
                                 > 9 (sangat sama/terkait)
-                                <br>
+                                <br><br>
                                 Jumlah Kuisioner = 500
                                 <br>
                                 > Nomor 1 - 250 merupakan Noun (Kata Benda)
                                 <br>
                                 > Nomor 251 - 500 merupakan Verb (Kata Kerja)
-                                <br>
+                                <br><br>
                                 Jumlah Responden = 20
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>

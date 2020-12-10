@@ -13,7 +13,27 @@
 @section('page-content')
     <div class="container mb-5">
         <div class="top-margin mb-4">
-            Terimakasih yang sebesar-besarnya atas kesediaan Anda telah meluangkan waktu untuk mengisi semua kuesioner ini.
+            Hallo,
+            <br>
+            <br>
+            Kuisioner penilaian pasangan kata yang akan Anda ikuti dirancang untuk berkontribusi dalam pekerjaan akademis saya pada bidang Text Mining (Penambangan Data). Ruang lingkup dan aturan penelitian dirangkum di bawah ini.
+            <br>
+            <br>
+            Anda diminta untuk menilai pasangan kata, nilai yang harus Anda berikan antara 0 sampai 10.
+            <br>
+            Kuisioner terdiri dari 500 pasang kata atau 1000 kosa kata yang diambil dari beberapa artikel, diantaranya 250 Noun (Kata Benda) dan 250 Verb (Kata Kerja).
+            <br>
+            Berikan jawaban yang paling tepat sesuai penilaian subjektif Anda. Tidak ada pertanyaan yang memiliki jawaban benar atau salah.
+            <br>
+            Beberapa kata mungkin tampak keliru, canggung, dan dibuat-buat sekilas. Tidak peduli seberapa tidak biasanya, itu adalah makna yang muncul di pikiran Anda ketika Anda membaca kata tersebut.
+            <br>
+            <br>
+            Diperkirakan membutuhkan waktu sekitar 1 - 2 jam jika dilakukan tanpa istirahat. Anda diperbolehkan mengisi kuisioner secara bertahap, data diri dan penilaian yang sudah disubmit hanya akan tersimpan jika Anda mengisi kuisioner dengan device yang sama seperti awal/sebelumnya.
+            <br>
+            Waktu pengisian selama 7 hari, dimulai dari tanggal 10 - 16 Desember 2020.
+            <br>
+            <br>
+            Terimakasih sebelumnya atas dukungan dan kesabaran Anda.
             <br>
             <br>
             Fetra Moira Fiermansyah
