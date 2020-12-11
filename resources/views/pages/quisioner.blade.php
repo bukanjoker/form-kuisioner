@@ -10,7 +10,7 @@
 
 @section('user')
     @if ($request->code && $user)
-        <span class="mr-3">Progress <span id="progress">{{$progress}}</span>/{{$words->total()}}</span>
+        <span class="mr-3">Progres <span id="progress">{{$progress}}</span>/{{$words->total()}}</span>
     @endif
 @endsection
 
