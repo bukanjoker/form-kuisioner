@@ -75,8 +75,12 @@ class QuestionaireController extends Controller
             return redirect('/');
         }
 
-        $words = DB::table('words')->paginate(50);
-        
-        return view('pages.quisioner',compact('words','user','request'));
+        $words = DB::table('words')
+        ->leftJoin(DB::raw('(SELECT word_id, score_similarity, score_relatedness FROM questionaires WHERE user_id = '.$user->id.') p'),"p.word_id","=","id")
+        ->paginate(50);
+
+        $progress = DB::table('questionaires')->where('user_id',$user->id)->count();
+
+        return view('pages.quisioner',compact('words','user','request','progress'));
     }
 }

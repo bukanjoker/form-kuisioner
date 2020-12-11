@@ -42,7 +42,47 @@
             </svg>
         </div>
         <div class="d-flex justify-content-center">
-            <a class="btn btn-primary" href="/registration" style="padding: 8px 64px;">Mulai</a>
+            <button onclick="checkSession()" class="btn btn-primary" style="padding: 8px 64px;">Mulai</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalSession" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Anda sudah pernah mengisi kuisioner, apakah ingin melanjutkan?
+              </div>
+              <div class="modal-footer">
+                <a href="/registration" class="btn btn-secondary" style="padding: 8px 32px;">Dari Awal</a>
+                <button onclick="gotoSession()" type="button" class="btn btn-primary" style="padding: 8px 32px;">Lanjut</button>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        var code = localStorage.getItem("code");
+        var page = localStorage.getItem("page");
+
+        function checkSession() {
+            if (code && page) {
+                $('#modalSession').modal('show')
+            }
+            else {
+                window.location.href = '/registration'
+            }
+        }
+
+        function gotoSession() {
+            window.location.href = '/quisionaire?page='+page+'&code='+code
+        }
+    </script>
 @endsection
