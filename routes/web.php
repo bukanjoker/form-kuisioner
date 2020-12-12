@@ -25,7 +25,11 @@ Route::get('/registration', function() {
 Route::get('/thanks', function () {
     return view('pages.thanks');
 });
+
 Route::get('/quisionaire', [ QuestionaireController::class, 'getQuestionaries' ]);
+Route::post('/quisionaire/insert', [ QuestionaireController::class, 'insertQuestionaries' ])->name('insertQuesioner');
+Route::post('/quisionaire/{id}/update', [ QuestionaireController::class, 'updateQuestionaries' ])->name('updateQuesioner');
+
 Route::get('/form-data', [ QuestionaireController::class, 'getFormData' ]);
 
 Route::post('/user-register', [ UsersController::class, 'register' ]);

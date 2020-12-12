@@ -76,11 +76,38 @@ class QuestionaireController extends Controller
         }
 
         $words = DB::table('words')
-        ->leftJoin(DB::raw('(SELECT word_id, score_similarity, score_relatedness FROM questionaires WHERE user_id = '.$user->id.') p'),"p.word_id","=","id")
+        ->leftJoin(DB::raw('(SELECT id as q_id, word_id, score_similarity, score_relatedness FROM questionaires WHERE user_id = '.$user->id.') p'),"p.word_id","=","id")
         ->paginate(50);
 
         $progress = DB::table('questionaires')->where('user_id',$user->id)->count();
 
         return view('pages.quisioner',compact('words','user','request','progress'));
+    }
+
+    public function insertQuestionaries(Request $request)
+    {
+        $user = DB::table('users')->where('code','=',$request->code)->first();
+
+        DB::table('questionaires')->insert(
+            [
+                'user_id' => $user->id,
+                'word_id' => $request->word_id,
+                'score_similarity' => $request->score_similarity,
+                'score_relatedness' => $request->score_relatedness
+            ]
+        );
+
+        return;
+    }
+
+    public function updateQuestionaries(Request $request)
+    {
+        DB::table('questionaires')->where('id',$request->id)
+        ->update([
+            'score_similarity' => $request->score_similarity,
+            'score_relatedness' => $request->score_relatedness
+        ]);
+
+        return;
     }
 }

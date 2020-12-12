@@ -29,7 +29,7 @@
 @section('page-content')
     <div class="container mt-4 mb-4">
         @foreach ($words as $index => $kata)
-            <div id="{{$kata->id}}" class="card mb-2 {{$kata->word_id ? 'submitted' : ''}}">
+            <div id="{{$kata->id}}" class="card mb-2 {{$kata->score_similarity || $kata->score_relatedness ? 'submitted' : ''}}" onchange="submitScore(this, {{ $kata->q_id }})">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-6">
@@ -53,7 +53,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <small>Nilai Kesamaan</small><br>
-                                    <select class="form-control" name="">
+                                    <select class="similarity form-control" name="">
                                         @for ($j=0; $j <= 9; $j++)
                                             <option {{$kata->score_similarity == $j ? 'selected' : ''}}  value={{$j}}>{{$j}}</option>
                                         @endfor
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <small>Nilai Keterkaitan</small><br>
-                                    <select class="form-control" name="">
+                                    <select class="relatedness form-control" name="">
                                         @for ($j=0; $j <= 9; $j++)
                                             <option {{$kata->score_relatedness == $j ? 'selected' : ''}} value={{$j}}>{{$j}}</option>
                                         @endfor
@@ -88,7 +88,16 @@
                         Next
                     </a>
                 </li>
-            </ul>
+            </ul
+>        </div>
+        <div style="display: none;">
+            <form id="form-questionaire" action="" method="post">
+                @csrf
+                <input id="code" type="text" name="code">
+                <input id="word_id" type="number" name="word_id">
+                <input id="score_similarity" type="number" name="score_similarity">
+                <input id="score_relatedness" type="number" name="score_relatedness">
+            </form>
         </div>
     </div>
 @endsection
@@ -104,6 +113,40 @@
 
         if (page) {
             localStorage.setItem("page", page);
+        }
+
+        function submitScore(event, id) {
+            var similarity = $(event).find('.similarity').val()
+            var relatedness = $(event).find('.relatedness').val()
+            var wordId = $(event).attr('id')
+
+            $('#code').val(code)
+            $('#word_id').val(wordId)
+            $('#score_similarity').val(similarity)
+            $('#score_relatedness').val(relatedness)
+
+            // update
+            if (id) {
+                $.ajax({
+                    url: '/quisionaire/'+id+'/update',
+                    method: 'post',
+                    data: $('#form-questionaire').serialize(),
+                    success: function() {
+                        location.reload();
+                    }
+                })
+            }
+            // insert
+            else {
+                $.ajax({
+                    url: '/quisionaire/insert',
+                    method: 'post',
+                    data: $('#form-questionaire').serialize(),
+                    success: function() {
+                        location.reload();
+                    }
+                })
+            }
         }
     </script>
 @endsection

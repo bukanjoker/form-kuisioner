@@ -30,7 +30,7 @@
             <br>
             Diperkirakan membutuhkan waktu sekitar 1 - 2 jam jika dilakukan tanpa istirahat. Anda diperbolehkan mengisi kuisioner secara bertahap, data diri dan penilaian yang sudah disubmit hanya akan tersimpan jika Anda mengisi kuisioner dengan device yang sama seperti awal/sebelumnya.
             <br>
-            Waktu pengisian selama 7 hari, dimulai dari tanggal 10 - 16 Desember 2020.
+            Waktu pengisian selama 7 hari, dimulai dari tanggal 13 - 20 Desember 2020.
             <br>
             <br>
             Terimakasih sebelumnya atas dukungan dan kesabaran Anda.
