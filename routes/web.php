@@ -31,7 +31,9 @@ Route::post('/quisionaire/insert', [ QuestionaireController::class, 'insertQuest
 Route::post('/quisionaire/{id}/update', [ QuestionaireController::class, 'updateQuestionaries' ])->name('updateQuesioner');
 
 Route::get('/form-data', [ QuestionaireController::class, 'getFormData' ]);
-
-Route::post('/user-register', [ UsersController::class, 'register' ]);
 Route::post('/add-word', [ QuestionaireController::class, 'addWords' ]);
 Route::post('/words/{id}/delete', [ QuestionaireController::class, 'deleteWord' ]);
+
+Route::get('/user-list', [ UsersController::class, 'getUsers' ]);
+Route::post('/user-register', [ UsersController::class, 'register' ]);
+Route::post('/user/{id}/delete', [ UsersController::class, 'deleteUser' ]);

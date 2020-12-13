@@ -46,4 +46,25 @@ class UsersController extends Controller
         
         return redirect('/quisionaire?code='.$code);
     }
+
+    public function getUsers(Request $request)
+    {
+        $users = DB::table('users')
+        ->select('users.*',DB::raw('count(questionaires.id) as progress'))
+        ->leftJoin('questionaires','users.id','=','questionaires.user_id')
+        ->groupBy('users.id')
+        ->get();
+
+        $wordCount = DB::table('words')->count();
+
+        return view('pages.user-list', compact('users','wordCount'));
+    }
+
+    public function deleteUser(Request $request)
+    {
+        DB::table('questionaires')->where('user_id','=',$request->id)->delete();
+        DB::table('users')->where('id','=',$request->id)->delete();
+
+        return;
+    }
 }

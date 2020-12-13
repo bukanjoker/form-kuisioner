@@ -19,7 +19,7 @@
             Kuisioner penilaian pasangan kata yang akan Anda ikuti dirancang untuk berkontribusi dalam pekerjaan akademis saya pada bidang Text Mining (Penambangan Data). Ruang lingkup dan aturan penelitian dirangkum di bawah ini.
             <br>
             <br>
-            Anda diminta untuk menilai pasangan kata, nilai yang harus Anda berikan antara 0 sampai 10.
+            Anda diminta untuk menilai pasangan kata, nilai yang harus Anda berikan antara 0 sampai 9.
             <br>
             Kuisioner terdiri dari 500 pasang kata atau 1000 kosa kata yang diambil dari beberapa artikel, diantaranya 250 Noun (Kata Benda) dan 250 Verb (Kata Kerja).
             <br>
