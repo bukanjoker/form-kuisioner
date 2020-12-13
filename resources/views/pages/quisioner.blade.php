@@ -29,7 +29,7 @@
 @section('page-content')
     <div class="container mt-4 mb-4">
         @foreach ($words as $index => $kata)
-            <div id="{{$kata->id}}" class="card mb-2 {{$kata->score_similarity || $kata->score_relatedness ? 'submitted' : ''}}" onchange="submitScore(this, {{ $kata->q_id }})">
+            <div id="{{$kata->id}}" class="card mb-2 {{$kata->score_similarity != null || $kata->score_relatedness != null ? 'submitted' : ''}}" onchange="submitScore(this, {{ $kata->q_id }})">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-6">
