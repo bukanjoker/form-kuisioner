@@ -87,15 +87,18 @@ class QuestionaireController extends Controller
     public function insertQuestionaries(Request $request)
     {
         $user = DB::table('users')->where('code','=',$request->code)->first();
+        $data = DB::table('questionaires')->whereRaw("user_id = ".$user->id." AND word_id = ".$request->word_id)->get();
 
-        DB::table('questionaires')->insert(
-            [
-                'user_id' => $user->id,
-                'word_id' => $request->word_id,
-                'score_similarity' => $request->score_similarity,
-                'score_relatedness' => $request->score_relatedness
-            ]
-        );
+        if (count($data) == 0) {
+            DB::table('questionaires')->insert(
+                [
+                    'user_id' => $user->id,
+                    'word_id' => $request->word_id,
+                    'score_similarity' => $request->score_similarity,
+                    'score_relatedness' => $request->score_relatedness
+                ]
+            );
+        }
 
         return;
     }
