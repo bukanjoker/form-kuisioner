@@ -25,6 +25,10 @@ Route::get('/registration', function() {
 Route::get('/thanks', function () {
     return view('pages.thanks');
 });
+Route::get('/admin-menu', function () {
+    return view('pages.admin-menu');
+});
+Route::get('/data-table', [ QuestionaireController::class, 'getDataTable' ]);
 
 Route::get('/quisionaire', [ QuestionaireController::class, 'getQuestionaries' ]);
 Route::post('/quisionaire/insert', [ QuestionaireController::class, 'insertQuestionaries' ])->name('insertQuesioner');

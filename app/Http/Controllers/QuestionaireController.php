@@ -110,4 +110,57 @@ class QuestionaireController extends Controller
 
         return;
     }
+
+    public function getDataTable(Request $request)
+    {
+        $data = DB::select('
+            SELECT 
+                dt.word_id, 
+                dt.word_1, 
+                dt.word_2,
+                dt.mean_similarity,
+                dt.total_similarity,
+                (dt.total_similarity/4*10) as GS,
+                dt.mean_relatedness,
+                dt.total_relatedness,
+                (dt.total_relatedness/4*10) as GR
+            FROM
+            (
+                SELECT 
+                    q.word_id, 
+                    w.word_1, 
+                    w.word_2,
+                    AVG(q.score_similarity) as mean_similarity,
+                    SUM(q.score_similarity) as total_similarity,
+                    AVG(q.score_relatedness) as mean_relatedness,
+                    SUM(q.score_relatedness) as total_relatedness
+                FROM questionaires q
+                LEFT JOIN words w ON q.word_id = w.id
+                LEFT JOIN users u ON q.user_id = u.id
+                WHERE q.user_id IN (
+                    SELECT q.user_id
+                    FROM questionaires q
+                    GROUP BY q.user_id
+                    HAVING COUNT(*) = 500
+                )
+                GROUP BY
+                    q.word_id
+            ) as dt
+        ');
+
+        $userComplete = DB::select('
+            SELECT q.user_id
+            FROM questionaires q
+            GROUP BY q.user_id
+            HAVING COUNT(*) = 500
+        ');
+        $userAssigned = DB::select('
+            SELECT q.user_id
+            FROM questionaires q
+            GROUP BY q.user_id
+            HAVING COUNT(*) > 1
+        ');
+
+        return view('pages.data-table', ['data'=>$data, 'userComplete'=>count($userComplete), 'userAssigned'=>count($userAssigned)]);
+    }
 }
