@@ -117,7 +117,7 @@
                 sheet.addRows(xls_content)
 
                 // exporting
-                workbook.xlsx.writeBuffer().then(function(datas) {
+                workbook.csv.writeBuffer().then(function(datas) {
                     var blob = new Blob([datas], {
                         type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                     });
