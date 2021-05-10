@@ -123,10 +123,10 @@ class QuestionaireController extends Controller
                 dt.word_2,
                 dt.mean_similarity,
                 dt.total_similarity,
-                (dt.total_similarity/4*10) as GS,
+                (dt.mean_similarity/4*10) as GS,
                 dt.mean_relatedness,
                 dt.total_relatedness,
-                (dt.total_relatedness/4*10) as GR
+                (dt.mean_relatedness/4*10) as GR
             FROM
             (
                 SELECT 
